@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from 'react';
+// import List??? from './components/blahblah';
+// import Search??? from './components/blahblah';
 import axios from 'axios';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='Header'>
+        {/* SEARCH FORM HERE - FORM, INPUT? */} Hello World
       </header>
+      <div className='Articles'>{/* LIST ARTICLES HERE - .MAP? */}</div>
     </div>
   );
-}
+};
 
 
 export default App;
