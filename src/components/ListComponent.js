@@ -6,37 +6,32 @@ const ListComponent = (props) => {
     const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('https://hn.algolia.com/api/v1/search_by_date?tags=story&hitsPerPage=50')
+    axios.get('http://hn.algolia.com/api/v1/items/')
     .then((response)=>{
-        const responseData= response.hits;
+        const responseData= response.data;
         console.log(responseData) 
         setData(responseData);
 
     //initialize visibility  
     const initialVisibility = {};
     responseData.forEach((item) => {
-        initialVisibility[item.title] = true;
+        initialVisibility[item.id] = true;
     })
     setVisibility(initialVisibility);
   })
   }, []);
 
-  if(!responseData){
-    return (
-      <div>No results found</div>
-    )
-  }
-
     return (
         <div>
         {data ? data.map(item => <p key={item.id}>{item.name}</p>) : 'Loading...'}
-    
+     
+        
         //JSx code here
         <ul>
-        {responseData.map(item => <p key={item.title}></p>)}
+        
         </ul>
         </div>
     )
 }
 
-export default ListComponent;
+export {ListComponent};
