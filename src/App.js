@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-// import List??? from './components/blahblah';
+import React from 'react';
+import ListComponent from './ListComponent';
 // import Search??? from './components/blahblah';
-import axios from 'axios';
 import './App.css';
 
 const App = () => {
@@ -10,10 +9,11 @@ const App = () => {
       <header className='Header'>
         {/* SEARCH FORM HERE - FORM, INPUT? */} Hello World
       </header>
-      <div className='Articles'>{/* LIST ARTICLES HERE - .MAP? */}</div>
+      <div className='Articles'>
+        <ListComponent />
+      </div>
     </div>
   );
 };
-
 
 export default App;
